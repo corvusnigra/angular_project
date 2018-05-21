@@ -11,6 +11,10 @@ import { HeaderComponent } from './navigation/header/header.component';
 import { SidenavListComponent } from './navigation/sidenav-list/sidenav-list.component';
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {AuthModule} from "./auth/auth.module";
+import {StoreModule} from "@ngrx/store";
+import {reducers} from "./app.reducer";
+import {AuthService} from "./auth/auth.service";
+import {UIService} from "./shared/ui.service";
 
 
 
@@ -28,9 +32,10 @@ import {AuthModule} from "./auth/auth.module";
         FlexLayoutModule,
         AngularFireModule.initializeApp(environment.firebase),
         AuthModule,
-        AngularFirestoreModule
+        AngularFirestoreModule,
+        StoreModule.forRoot(reducers)
     ],
-    providers: [],
+    providers: [AuthService, UIService],
     bootstrap: [AppComponent]
 })
 export class AppModule {
