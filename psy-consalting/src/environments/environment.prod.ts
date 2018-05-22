@@ -1,11 +1,11 @@
 export const environment = {
   production: true,
     firebase : {
-        apiKey: "AIzaSyCZs1OYUeESBq2QXktps9SHjW55400YJ4g",
-        authDomain: "psy-consalting.firebaseapp.com",
-        databaseURL: "https://psy-consalting.firebaseio.com",
-        projectId: "psy-consalting",
-        storageBucket: "psy-consalting.appspot.com",
-        messagingSenderId: "329080661493"
+        apiKey: "AIzaSyD-0oHzsthcw1AZ4cvonPVNE1ZZIzm5nhI",
+        authDomain: "psy-consalting-634a4.firebaseapp.com",
+        databaseURL: "https://psy-consalting-634a4.firebaseio.com",
+        projectId: "psy-consalting-634a4",
+        storageBucket: "",
+        messagingSenderId: "277525265345"
     }
 };

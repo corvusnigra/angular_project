@@ -53,6 +53,10 @@ export class ProsperityService {
     // }
 
     addProsperity(prosperity: Prosperity) {
-        this.db.collection('prosperity').add(prosperity);
+        this.db.collection('prosperity').add({
+            first: "Ada",
+            last: "Lovelace",
+            born: 1815
+        });
     }
 }

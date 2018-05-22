@@ -65,7 +65,9 @@ export class ProsperityRatingComponent implements OnInit {
 
         const prosperity = new Prosperity({
             ...this.prosperityForm.value
-        })
+        });
+
+        this.prosperityService.addProsperity(prosperity)
 
         console.log(prosperity)
     }
