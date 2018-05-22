@@ -16,10 +16,10 @@
         <a routerLink="/login">Войти</a>
       </li>
       <li *ngIf="isAuth$ | async">
-        <a routerLink="/training">Training</a>
+        <a routerLink="/prosperity">Благополучие</a>
       </li>
       <li *ngIf="isAuth$ | async">
-        <a style="cursor: pointer" (click)="onLogout()">Logout</a>
+        <a style="cursor: pointer" (click)="onLogout()">Выйти</a>
       </li>
     </ul>
   </div>

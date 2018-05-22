@@ -15,6 +15,8 @@ import {StoreModule} from "@ngrx/store";
 import {reducers} from "./app.reducer";
 import {AuthService} from "./auth/auth.service";
 import {UIService} from "./shared/ui.service";
+import { WelcomeComponent } from './welcome/welcome/welcome.component';
+import {ProsperityService} from "./prosperity/prosperity.service";
 
 
 
@@ -22,7 +24,8 @@ import {UIService} from "./shared/ui.service";
     declarations: [
         AppComponent,
         HeaderComponent,
-        SidenavListComponent
+        SidenavListComponent,
+        WelcomeComponent
     ],
     imports: [
         BrowserModule,
@@ -35,7 +38,11 @@ import {UIService} from "./shared/ui.service";
         AngularFirestoreModule,
         StoreModule.forRoot(reducers)
     ],
-    providers: [AuthService, UIService],
+    providers: [
+        AuthService,
+        UIService,
+        ProsperityService
+    ],
     bootstrap: [AppComponent]
 })
 export class AppModule {

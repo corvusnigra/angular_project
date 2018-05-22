@@ -1,0 +1,169 @@
+<section class="prosperity">
+    <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="20px">
+        <div fxFlex=" 70%">
+            <h2>Оцените по 10 бальной шкале степень благополучия в основных областях жизнедеятельности</h2>
+            <form
+                    [formGroup]="prosperityForm"
+                    (ngSubmit)="onSubmit()">
+                <mat-form-field>
+                    <mat-select
+                            placeholder="Психическое здоровье"
+                            formControlName="mentalHealth"
+                            [(ngModel)]="mentalHealth"
+                    >
+                        <mat-option *ngFor="let value of valueOption" [value]="value">
+                            {{ value }}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+
+                <div [class]="setColorPosperity(mentalHealth)">
+                    <mat-progress-bar
+
+                            mode="determinate"
+                            [value]="mentalHealth * 10"
+
+                    >
+                    </mat-progress-bar>
+                </div>
+
+                <mat-form-field>
+                    <mat-select
+                            placeholder="Физическое здоровье"
+                            formControlName="physicalHealth"
+                            [(ngModel)]="physicalHealth"
+                    >
+                        <mat-option *ngFor="let value of valueOption" [value]="value">
+                            {{ value }}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+
+                <div [class]="setColorPosperity(physicalHealth)">
+                    <mat-progress-bar
+
+                            mode="determinate"
+                            [value]="physicalHealth * 10"
+
+                    >
+                    </mat-progress-bar>
+                </div>
+                <mat-form-field>
+                    <mat-select
+                            placeholder="Духовное здоровье"
+                            formControlName="meaning"
+                            [(ngModel)]="meaning"
+                    >
+                        <mat-option *ngFor="let value of valueOption" [value]="value">
+                            {{ value }}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+
+                <div [class]="setColorPosperity(meaning)">
+                    <mat-progress-bar
+
+                            mode="determinate"
+                            [value]="meaning * 10"
+
+                    >
+                    </mat-progress-bar>
+                </div>
+
+                <mat-form-field>
+                    <mat-select
+                            placeholder="Любовь Секс"
+                            formControlName="love"
+                            [(ngModel)]="love"
+                    >
+                        <mat-option *ngFor="let value of valueOption" [value]="value">
+                            {{ value }}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+
+                <div [class]="setColorPosperity(love)">
+                    <mat-progress-bar
+
+                            mode="determinate"
+                            [value]="love * 10"
+
+                    >
+                    </mat-progress-bar>
+                </div>
+
+                <mat-form-field>
+                    <mat-select
+                            placeholder="Взаимоотношения"
+                            formControlName="relationships"
+                            [(ngModel)]="relationships"
+                    >
+                        <mat-option *ngFor="let value of valueOption" [value]="value">
+                            {{ value }}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+
+                <div [class]="setColorPosperity(relationships)">
+                    <mat-progress-bar
+
+                            mode="determinate"
+                            [value]="relationships * 10"
+
+                    >
+                    </mat-progress-bar>
+                </div>
+
+                <mat-form-field>
+                    <mat-select
+                            placeholder="Работа"
+                            formControlName="job"
+                            [(ngModel)]="job"
+                    >
+                        <mat-option *ngFor="let value of valueOption" [value]="value">
+                            {{ value }}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+
+                <div [class]="setColorPosperity(job)">
+                    <mat-progress-bar
+
+                            mode="determinate"
+                            [value]="job * 10"
+
+                    >
+                    </mat-progress-bar>
+                </div>
+
+                <mat-form-field>
+                    <mat-select
+                            placeholder="Доход"
+                            formControlName="income"
+                            [(ngModel)]="income"
+                    >
+                        <mat-option *ngFor="let value of valueOption" [value]="value">
+                            {{ value }}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+
+                <div [class]="setColorPosperity(income)">
+                    <mat-progress-bar
+
+                            mode="determinate"
+                            [value]="income * 10"
+
+                    >
+                    </mat-progress-bar>
+                </div>
+
+
+                <button *ngIf="!(isLoading$ | async)" type="submit" mat-raised-button color="primary" [disabled]="prosperityForm.invalid">Оценить</button>
+
+            </form>
+
+        </div>
+    </div>
+</section>
+
